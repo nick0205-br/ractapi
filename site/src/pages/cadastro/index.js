@@ -14,8 +14,9 @@ export default function Cadastro() {
       <div>
               <div>
                   <h1>
-                      Insira as informações
+                    Cadastro
                   </h1>
+                  <h2>Insira as informações</h2>
                   <div>
                       <label>Nome</label>
                       <input value={nome} onChange={e => setNome(e.target.value)}></input>
