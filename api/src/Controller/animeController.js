@@ -1,4 +1,4 @@
-import { consultarAnimesPorID, inserirAnime } from "../Repository/animeRepository.js";
+import { consultarAnimes, inserirAnime } from "../Repository/animeRepository.js";
 import { Router } from 'express'
 const server = Router();
 
@@ -14,10 +14,9 @@ server.post('/anime/', async (req, resp) => {
     }
 })
 
-server.get('/consulta/:id', async (req, resp) => {
+server.get('/consulta', async (req, resp) => {
     try{
-        const id = req.params.id;
-        const consultaAnime = await consultarAnimesPorID(id)
+        const consultaAnime = await consultarAnimes()
         resp.send(consultaAnime);
     } catch(err) {
         resp.status(404).send({
