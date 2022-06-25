@@ -6,8 +6,6 @@ const api = axios.create({
 function PostarAnime(nome, sinopse, lancamento){
     const resposta = api.post('/anime/', {
         nome: nome,
-        sinopse: sinopse,
-        lancamento: lancamento
     })
     return resposta.data;
 }
